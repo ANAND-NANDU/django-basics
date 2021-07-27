@@ -1,2 +1,2 @@
 # django-basics
-Learning django
+Learning Django basics
