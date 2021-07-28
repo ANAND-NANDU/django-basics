@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from . import models
-from .forms import carForm
+from .forms import carForm,carModelForm
 # Create your views here.
 
 def index(request):
@@ -30,6 +30,16 @@ def new_car(request):
 		print("free load")
 
 	return render(request,"cars/new_car.html")
+	
+def view_car(request):
+	
+	cars = models.cars.objects.get(pk=1)
+	form = carModelForm(instance=cars)
+	print ("ooooooooooooooooo")
+	print (form)
+	
+	return render(request,"cars/view_cars.html",{'form': form})
+			
 	
 	
 
